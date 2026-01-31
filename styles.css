@@ -15,10 +15,9 @@ table{
     background-color: #4CAAA7;
 }
 
-table th {
+/* table th {
     width: auto !important;
-}
-
+} */
 
 .edit::before{
     content:"✏️";
