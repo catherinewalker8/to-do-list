@@ -23,7 +23,6 @@ h3{
 }
 
 
-
 .edit::before{
     content:"✏️";
 }
@@ -37,7 +36,7 @@ h3{
 }
 
 .bin::before{
-    content:"Х";
+    content:"🗑️";
 }
 
 @media (max-width: 600px) {

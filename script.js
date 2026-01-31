@@ -17,10 +17,12 @@ function onClickSaveButton() {
         var itemsArea = document.getElementById("items");
         var newTr = document.createElement("tr");
         newTr.innerHTML = 
-                `<td><button class="done"></button></td>
+                `<tr>
+                <td><button class="done"></button></td>
                 <td>${newItemValue}</td>
                 <td><button class="edit"></button></td>
-                <td><button class="bin"></button></td>`;
+                <td><button class="bin"></button></td>
+                <tr>`;
         itemsArea.appendChild(newTr);
         newItem.value = null;
         nothingToDo.style.display="none";
@@ -35,7 +37,27 @@ function onClickDoneButton(e){
     if (e.target.classList.contains("done")) {
         e.target.classList.toggle("complete");
     }
+    // else if (e.target.classList.contains("bin")) {
+    //     var row = e.target.closest("tr");
+    //     row.remove();
+    // }
+    // var itemsArea = document.getElementById("items");
+    // if (itemsArea.children.length === 0) {
+    //     nothingToDo.style.display = "block";
+    // }
 }
+
+
+
+// var binButton = document.getElementById("bin");
+
+// var thisItem = document.getElementById("item1");
+
+// binButton.addEventListener("click", onClickBinButton);
+
+// function onClickBinButton(){
+//      thisItem.style.display="none";
+// }
 
 
 
