@@ -1,0 +1,33 @@
+*{
+    color:whitesmoke;
+    font-size:x-large;
+}
+
+button{
+    background-color: #003366!important;
+}
+
+body{
+    background-color: #1E7088 !important;
+}
+
+table{
+    background-color: #4CAAA7;
+}
+
+table th {
+    width: auto !important;
+}
+
+
+.edit::before{
+    content:"✏️";
+}
+
+.done::before{
+    content: "✔";
+}
+
+.bin::before{
+    content:"🗑️";
+}
