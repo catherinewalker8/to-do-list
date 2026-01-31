@@ -22,16 +22,21 @@
         </button>
     </div>
 
-    <div class="modal fade" id="newItemModal" tabindex="-1">
+
+    <div class="m-5" id="nothingToDo">
+        <h3 class="text-center">You have nothing to do!</h3>
+    </div>
+
+    <div class="modal fade h5" id="newItemModal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title text-dark">New item</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
-
+        
         <div class="modal-body">
-            <input type="text" id="newItem" class="form-control" placeholder="Enter a new item">
+            <input type="text" id="newItem" class="form-control" placeholder="Enter a new item" required>
         </div>
 
         <div class="modal-footer">
@@ -44,21 +49,13 @@
     </div>
     </div>
 
-    <div class="table-responsive m-5 rounded px-5">
-        <table class="table">
-        <colgroup>
-            <col style="width: 60%">
-            <col style="width: 13%">
-            <col style="width: 13%">
-            <col style="width: 13%">
-        </colgroup>
+    <div class="rounded h6 itemTable mx-auto my-5 col-11 col-md-6">
+        <table class="table rounded">
         <tbody id="items">
-            <tr>
-            <td>Example Item</td>
+            <!-- <td><button class="done"></button></td>
+            <td>${newItemValue}</td>
             <td><button class="edit"></button></td>
-            <td><button class="done"></button></td>
-            <td><button class="bin"></button></td>
-            </tr>
+            <td><button class="bin"></button></td> -->
         </tbody>
         </table>
     </div>

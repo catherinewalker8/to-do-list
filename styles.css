@@ -9,24 +9,39 @@ button{
 
 body{
     background-color: #1E7088 !important;
+    color:whitesmoke;
+    font-size:x-large;
 }
 
-table{
-    background-color: #4CAAA7;
+table, .edit, .done, .bin, .btn-close{
+    background-color: #4CAAA7 !important; 
+    border: none;
 }
 
-/* table th {
-    width: auto !important;
-} */
+h3{
+    color:#4CAAA7;
+}
+
+
 
 .edit::before{
     content:"✏️";
 }
 
 .done::before{
-    content: "✔";
+    content: "☐";
+}
+
+.done.complete::before {
+    content: "☑︎";
 }
 
 .bin::before{
-    content:"🗑️";
+    content:"Х";
+}
+
+@media (max-width: 600px) {
+    h1,h2,td{
+        font-size:5vw;
+    }
 }
