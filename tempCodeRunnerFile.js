@@ -4,69 +4,45 @@ var saveButton = document.getElementById("saveButton");
 
 var nothingToDo = document.getElementById("nothingToDo");
 
-var itemsArea = document.getElementById("items");
-
-var newItemButton = document.getElementById("newItemButton");
-
-var modalInput = document.querySelector("input");
-
-var modalTitle = document.querySelector(".modal-title");
-
 var rowBeingEdited = null;
 
+var itemsArea = document.getElementById("items");
 
-
-itemsArea.addEventListener("click", onClickListButton);
 
 saveButton.addEventListener("click", onClickSaveButton);
 
-newItemButton.addEventListener("click", onClickNewItemButton);
-
-
-
-function onClickNewItemButton(){
-    modalTitle.textContent = "New item";
-    modalInput.value = null;
-}
+itemsArea.addEventListener("click", onClickListButton);
 
 
 function onClickSaveButton() {
-        
         var newItemValue = newItem.value;
-
-        if (newItemValue.trim() == ""){
-            newItem.value = null;
-            return;
-        } 
-
         if (rowBeingEdited != null){
             rowBeingEdited.cells[1].innerText = newItemValue;
             rowBeingEdited = null;
         }
-
         else{
-        
+        if (newItemValue.trim() == ""){
+            newItem.value = null;
+            return;
+        } 
         var itemsArea = document.getElementById("items");
         var newTr = document.createElement("tr");
         newTr.innerHTML = 
-                `<td><button class="done"></button></td>
+                `<tr>
+                <td><button class="done"></button></td>
                 <td>${newItemValue}</td>
-                <td><button class="edit" data-bs-toggle="modal" 
-                data-bs-target="#newItemModal"></button></td>
-                <td><button class="bin"></button></td>`;
+                <td><button class="edit" data-bs-toggle="modal"></button></td>
+                <td><button class="bin"></button></td>
+                <tr>`;
         itemsArea.appendChild(newTr);
         }
-
         newItem.value = null;
-        modalInput.value = null;
-        modalTitle.textContent = "New item";
         nothingToDo.style.display = "none";
 }
 
 
 
 function onClickListButton(e){
-
     if (e.target.classList.contains("done")) {
         e.target.classList.toggle("complete");
     }
@@ -90,13 +66,37 @@ function onClickListButton(e){
 
     else if (e.target.classList.contains("edit")){
         rowBeingEdited = e.target.closest("tr");
-            modalTitle.textContent = "Edit item";
-            var cell = rowBeingEdited.cells[1].innerText;
-            modalInput.value = cell;
-
+        var cell = rowBeingEdited[1];
+        var modalInput = document.querySelector("input");
+        modalInput.value = console.log(cell);
     }
 
+
+    var itemsArea = document.getElementById("items");
     if (itemsArea.children.length === 0) {
         nothingToDo.style.display = "block";
     }
 }
+
+
+// function onClickEditButton(e){
+//     if(e.target.classList.contains("edit")){
+//         var itemText = e.target.closest("tr[1]")
+//     }
+// }
+
+
+// var binButton = document.getElementById("bin");
+
+// var thisItem = document.getElementById("item1");
+
+// binButton.addEventListener("click", onClickBinButton);
+
+// function onClickBinButton(){
+//      thisItem.style.display="none";
+// }
+
+
+
+
+

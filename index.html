@@ -17,7 +17,8 @@
     </div>
 
     <div class="container text-center p-3 my-2 d-flex justify-content-center">
-        <button type="button" class="btn btn-lg text-white" data-bs-toggle="modal" data-bs-target="#newItemModal">
+        <button type="button" class="btn btn-lg text-white" id="newItemButton"
+        data-bs-toggle="modal" data-bs-target="#newItemModal">
         New item +
         </button>
     </div>
@@ -32,7 +33,6 @@
         <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title text-dark">New item</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         
         <div class="modal-body">
@@ -40,9 +40,11 @@
         </div>
 
         <div class="modal-footer">
-            <button type="button" id="saveButton" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-            Close
+            <button type="button" id="saveButton" class="btn btn-primary" data-bs-dismiss="modal">
+                Save
+            </button>
+            <button type="button" id="closeButton" class="btn btn-secondary" data-bs-dismiss="modal">
+                Close
             </button>
         </div>
         </div>
@@ -53,10 +55,12 @@
         <table class="table rounded">
         <tbody id="items">
             <!-- pre-filled row to test functionality -->
-            <td><button class="done"></button></td>
+            <tr>
+            <!-- <td><button class="done"></button></td>
             <td>Walk the dog</td>
             <td><button class="edit" data-bs-toggle="modal" data-bs-target="#newItemModal"></button></td>
-            <td><button class="bin"></button></td>
+            <td><button class="bin"></button></td> -->
+            </tr>
         </tbody>
         </table>
     </div>
