@@ -34,6 +34,12 @@ function onClickSaveButton() {
         
         var newItemValue = newItem.value;
 
+        if (newItemValue === ""){
+            alert("Please enter an item");
+            newItem.value = null;
+            return;
+        }
+
         if (newItemValue.trim() == ""){
             newItem.value = null;
             return;
