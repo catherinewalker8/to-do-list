@@ -95,7 +95,7 @@ app.post("/echo", (req, res) => {
 });
 
 // Wildcard route to handle undefined routes
-app.all("/:any*", (req, res) => {
+app.all("*path", (req, res) => {
   res.status(404).send("Route not found");
 });
 
