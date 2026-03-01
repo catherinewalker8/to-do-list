@@ -13,7 +13,7 @@ const PORT = 3001;
 // Middleware to parse incoming JSON requests
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Define the path to the JSON file
 const dataFilePath = path.join(__dirname, "data.json");
