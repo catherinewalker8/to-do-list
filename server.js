@@ -32,6 +32,9 @@ const writeData = (data) => {
   fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
 };
 
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 
 // Handle GET request to retrieve stored data
 app.get("/data", (req, res) => {
@@ -92,7 +95,7 @@ app.post("/echo", (req, res) => {
 });
 
 // Wildcard route to handle undefined routes
-app.all("/*", (req, res) => {
+app.all("/:any*", (req, res) => {
   res.status(404).send("Route not found");
 });
 
