@@ -41,6 +41,9 @@ app.get("/data", (req, res) => {
 
 // Handle POST request to save new data with a unique ID
 app.post("/data", (req, res) => {
+if (!req.body || !req.body.note) {
+    return res.status(400).json({ message: "Please enter a note" });
+}
   const newData = { id: uuidv4(), note: req.body.note };
   const currentData = readData();
   currentData.push(newData);
@@ -79,6 +82,7 @@ app.delete("/data/:id", (req, res) => {
   }
   const newData = data.filter(item => item.id !== req.params.id);
   writeData(newData);
+  res.json({ message: "Data deleted successfully" });
 });
 
 // Handle POST request at the /echo route
